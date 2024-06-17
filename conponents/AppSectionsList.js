@@ -1,4 +1,5 @@
 export default {
+    // 使用 template 定义组件的 HTML 结构
     template: `
       <section v-show="doChild.length">
         <h2>{{ headline }}</h2>
@@ -12,6 +13,7 @@ export default {
         </ul>
       </section>
     `,
+    // 定义组件的 props
     props: {
         headline: String,
         doChild: Array

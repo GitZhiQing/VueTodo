@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue - TODO</title>
+    <!--通过 CDN 使用 Vue 3-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--根元素-->
 <div id="app"></div>
 
 <script type="module">
+    // 导入根组件
     import App from "./conponents/App.js";
 
+    // 创建 Vue 应用并挂载到 #app 元素
     Vue.createApp(App).mount("#app");
 </script>
 </body>

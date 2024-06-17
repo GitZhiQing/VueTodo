@@ -15,8 +15,8 @@ export default {
       <app-sections-form @add="fatherAdd"></app-sections-form>
     `,
     data() {
+        // 从 localStorage 中获取数据，如果没有则返回默认数据
         return {
-            // 返回从 localStorage 中获取的数据，如果没有则返回默认数据
             todos: JSON.parse(localStorage.getItem('todos')) || [
                 {id: 1, name: '吃饭', done: false},
                 {id: 2, name: '睡觉', done: false},
@@ -25,6 +25,7 @@ export default {
         }
     },
     computed: {
+        // 计算未完成和已完成的任务列表
         filters() {
             return {
                 beforeDo: this.todos.filter(item => !item.done),
@@ -33,12 +34,14 @@ export default {
         }
     },
     methods: {
+        // 添加新任务
         fatherAdd(todo) {
             this.todos.push({
                 id: this.todos.length + 1,
                 name: todo,
                 done: false
             });
+            // 保存数据到 localStorage
             this.saveTodos();
         },
         // 保存数据到 localStorage
